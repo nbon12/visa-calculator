@@ -7,6 +7,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatSliderModule,
     MatButtonModule,
     MatDividerModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
