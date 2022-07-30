@@ -7,9 +7,9 @@ tasks:
     command: echo 'second script'
     openMode: split-right
   - name: 'install angularr'
-    init: 'npm install -g @angular/cli' 
-  - name: 'serve angular'
+    before: 'npm install -g @angular/cli' 
     command: 'cd visa-calculator && ng serve --open'
+
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
