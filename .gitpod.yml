@@ -6,6 +6,8 @@ tasks:
     init: echo 'second script'
     command: echo 'second script'
     openMode: split-right
+  - name: 'install angularr'
+    init: 'npm install -g @angular/cli' 
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
