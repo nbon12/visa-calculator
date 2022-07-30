@@ -4,6 +4,8 @@ tasks:
     command: echo 'start script'
   - name: 'install angularr'
     before:  npm install -g @angular/cli
+  - name: npm install
+    command: cd visa-calculator && npm install
  # - name: 'serve angular' 
  #   command: 'cd visa-calculator && ng serve --open'
 
