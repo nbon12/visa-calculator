@@ -26,9 +26,18 @@
   </mat-list-option>
 </mat-selection-list>
 <mat-divider></mat-divider>
-
+<h2>Income (in Million Won)</h2>
+<mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="10"
+  step="1"
+  min="0"
+  max="100"
+  aria-label="units" (input)="onInputChange($event)"></mat-slider>
 <p>
 Total Points: {{getPoints()}}
+Income Range: Less than: {{incomeMillions3}}
 </p>
 
 </body>
