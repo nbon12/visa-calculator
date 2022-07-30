@@ -2,12 +2,12 @@
 tasks:
   - init: echo 'init script' # runs during prebuild
     command: echo 'start script'
-  - name: 'halp2'
-    init: echo 'second script'
-    command: echo 'second script'
-    openMode: split-right
+
   - name: 'install angularr'
-    before: 'npm install -g @angular/cli' 
+    before: |
+      npm install -g @angular/cli
+      npm install
+  - name: 'serve angular' 
     command: 'cd visa-calculator && ng serve --open'
 
 
