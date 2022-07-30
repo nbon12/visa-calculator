@@ -5,9 +5,9 @@ tasks:
   - name: 'install angularr'
     before:  npm install -g @angular/cli
   - name: npm install
-    command: cd visa-calculator && npm install
- # - name: 'serve angular' 
- #   command: 'cd visa-calculator && ng serve --open'
+    command: cd visa-calculator && npm install && gp sync-done npminstall
+  - name: 'serve angular' 
+    command: 'gp sync-await npminstall && cd visa-calculator && ng serve --open'
 
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
