@@ -3,5 +3,26 @@
 </head>
 <body>
 <h3>How old are you?</h3>
-  <button></button>
+  <div class="button-roww">
+    <mat-button-toggle-group>
+    <mat-button-toggle (click)="setPoints('age', 23)">18-24 (23 points)</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 25)">25-29 (25 points)</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 23)">30-34 (23 points)</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 12)">35-39 (12 points)</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <mat-divider></mat-divider>
+<h3>Education Level</h3>
+<button mat-raised-button (click)="setPoints('education', 20)">Doctorate in Arts</button>
+<button mat-raised-button (click)="setPoints('education', 25)">Doctorate in Science or Technology</button>
+<button mat-raised-button (click)="setPoints('education', 20)">Master of Science</button>
+<button mat-raised-button (click)="setPoints('education', 17)">Master of Arts</button>
+<button mat-raised-button (click)="setPoints('education', 17)">Bachelor of Science or Technology</button>
+<button mat-raised-button (click)="setPoints('education', 15)">Bachelor of Arts</button>
+<button mat-raised-button (click)="setPoints('education', 15)">Associates Degree in Science</button>
+<button mat-raised-button (click)="setPoints('education', 10)">Associates Degree in Arts</button>
+
+<button (click)="incrementX()">Increment X</button>
+X is currently {{getX()}}
+points are {{getPoints()}}
 </body>
