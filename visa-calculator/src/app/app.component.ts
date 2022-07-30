@@ -18,6 +18,8 @@ export class AppComponent {
   currentAgePoints = 0;
   pointDictionary = new Map<string, number>([['age' , 0], ['education' , 0], ['income' , 0], ['koreanLanguageAbility' , 0]])
   educationPoints = new Map<string, number>([['Doctorate Of Arts', 20], ['Doctorate of Science or Engineering', 25], ['Masters of Science or Engineering', 20], ['Masters of Arts', 17], ['Bachelor of Science or Engineering', 17], ['Bachelor of Arts', 15], ['Associate of Science or Engineering', 15], ['Associate of Arts', 10]])
+  koreanLanguagePoints = new Map<string, number>([['Over Level 5', 20], ['Level 4', 15], ['Level 3', 10], ['Level 2', 5], ['Level 1', 3]])
+
   setPoints(categoryName: string, points: number){
     this.pointDictionary.set(categoryName, points);
   }
@@ -31,5 +33,12 @@ export class AppComponent {
   }
   setEducation(educationLevel: string){
     this.pointDictionary.set('education', this.educationPoints.get(educationLevel)!)
+  }
+
+  setKoreanLanguageAbility(koreanLanguageAbility: string){
+    this.pointDictionary.set('koreanLanguageAbility', this.koreanLanguagePoints.get(koreanLanguageAbility)!)
+  }
+  getKoreanLevels() {
+    return Array.from(this.koreanLanguagePoints.keys());
   }
 }

@@ -2,7 +2,7 @@
 
 </head>
 <body>
-<h3>How old are you?</h3>
+<h2>How old are you?</h2>
   <div class="button-roww">
     <mat-button-toggle-group>
     <mat-button-toggle (click)="setPoints('age', 23)">18-24 (23 points)</mat-button-toggle>
@@ -12,41 +12,23 @@
     </mat-button-toggle-group>
   </div>
   <mat-divider></mat-divider>
-  <mat-divider></mat-divider>
-<h3>Education Level</h3>
-<mat-button-toggle-group>
-<mat-button-toggle (click)="setPoints('education', 20)">Doctorate in Arts</mat-button-toggle>
-<mat-button-toggle (click)="setPoints('education', 25)">Doctorate in Science or Technology</mat-button-toggle>
-<mat-button-toggle (click)="setPoints('education', 20)">Master of Science</mat-button-toggle>
-<mat-button-toggle (click)="setPoints('education', 17)">Master of Arts</mat-button-toggle>
-<mat-button-toggle (click)="setPoints('education', 17)">Bachelor of Science or Technology</mat-button-toggle>
-<mat-button-toggle (click)="setPoints('education', 15)">Bachelor of Arts</mat-button-toggle>
-<mat-button-toggle (click)="setPoints('education', 15)">Associates Degree in Science</mat-button-toggle>
-<mat-button-toggle (click)="setPoints('education', 10)">Associates Degree in Arts</mat-button-toggle>
-</mat-button-toggle-group>
-
-
-
-<button (click)="incrementX()">Increment X</button>
-X is currently {{getX()}}
-points are {{getPoints()}}
-<mat-divider></mat-divider>
+<h2>Education Level</h2>
 <mat-selection-list #shoes [multiple]="false">
   <mat-list-option *ngFor="let educationLevel of getEducationLevels()" (click)="setEducation(educationLevel)" [value]="educationLevel">
     {{educationLevel}}
   </mat-list-option>
 </mat-selection-list>
+<mat-divider></mat-divider>
+<h2>Korean Language Ability</h2>
+<mat-selection-list #koreanLanguageAbility [multiple]="false">
+  <mat-list-option *ngFor="let koreanLevel of getKoreanLevels()" (click)="setKoreanLanguageAbility(koreanLevel)" [value]="koreanLevel">
+    {{koreanLevel}}
+  </mat-list-option>
+</mat-selection-list>
+<mat-divider></mat-divider>
 
 <p>
- <!-- Option selected: {{shoes.selectedOptions.selected[0]?.value}} -->
- 
+Total Points: {{getPoints()}}
 </p>
-done
+
 </body>
-
-
-
-<p>
- <!-- Option selected: {{shoes.selectedOptions.selected[0].value}} -->
-</p>
-realdone
