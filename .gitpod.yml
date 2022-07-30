@@ -2,8 +2,10 @@
 tasks:
   - init: echo 'init script' # runs during prebuild
     command: echo 'start script'
-  - init: echo 'second script'
+  - name: 'halp2'
+    init: echo 'second script'
     command: echo 'second script'
+    openMode: split-right
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
