@@ -2,17 +2,22 @@
 
 </head>
 <body>
+  
 <h2>How old are you?</h2>
   <div class="button-roww">
     <mat-button-toggle-group>
-    <mat-button-toggle (click)="setPoints('age', 23)">18-24 (23 points)</mat-button-toggle>
-    <mat-button-toggle (click)="setPoints('age', 25)">25-29 (25 points)</mat-button-toggle>
-    <mat-button-toggle (click)="setPoints('age', 23)">30-34 (23 points)</mat-button-toggle>
-    <mat-button-toggle (click)="setPoints('age', 12)">35-39 (12 points)</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 23)">18-24</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 25)">25-29</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 23)">30-34</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 20)">35-39</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 12)">40-44</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 8)">45-50</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('age', 5)">51+</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
   <mat-divider></mat-divider>
 <h2>Education Level</h2>
+<p>If you have more than 2 degrees, select 'Engineering' and not 'Arts'.</p>
 <mat-selection-list #shoes [multiple]="false">
   <mat-list-option *ngFor="let educationLevel of getEducationLevels()" (click)="setEducation(educationLevel)" [value]="educationLevel">
     {{educationLevel}}
@@ -20,6 +25,7 @@
 </mat-selection-list>
 <mat-divider></mat-divider>
 <h2>Korean Language Ability</h2>
+<p>Grade on standard S-TOPIK report card</p>
 <mat-selection-list #koreanLanguageAbility [multiple]="false">
   <mat-list-option *ngFor="let koreanLevel of getKoreanLevels()" (click)="setKoreanLanguageAbility(koreanLevel)" [value]="koreanLevel">
     {{koreanLevel}}
@@ -35,7 +41,20 @@
   min="0"
   max="100"
   aria-label="units" (input)="onInputChange($event)"></mat-slider>
-<p>
+<h2>Did you complete the KIIP program?</h2>
+<mat-button-toggle-group>
+<mat-button-toggle (click)="setPoints('KIIP', 10)">Yes</mat-button-toggle>
+<mat-button-toggle (click)="setPoints('KIIP', 0)">No</mat-button-toggle>
+</mat-button-toggle-group>
+
+<h2>Professional Abroad Experience</h2>
+<p>Did you work overseas as a full-time employee? You must get a certificate of career issued by representatives of overseas public institutions, organizations and companies in the field. (only full time experience is accepted)</p>
+<mat-selection-list #professionalExperienceAbroad [multiple]="false">
+  <mat-list-option *ngFor="let professionalExperience of getProfessionalExperiences()" (click)="setProfessionalExperience(professionalExperience)" [value]="professionalExperience">
+    {{professionalExperience}}
+  </mat-list-option>
+</mat-selection-list>
+  <p>
 Total Points: {{getPoints()}}
 </p>
 

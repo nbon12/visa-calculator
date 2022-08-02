@@ -19,7 +19,8 @@ export class AppComponent {
   currentAgePoints = 0;
   pointDictionary = new Map<string, number>([['age' , 0], ['education' , 0], ['income' , 0], ['koreanLanguageAbility' , 0]])
   educationPoints = new Map<string, number>([['Doctorate Of Arts', 20], ['Doctorate of Science or Engineering', 25], ['Masters of Science or Engineering', 20], ['Masters of Arts', 17], ['Bachelor of Science or Engineering', 17], ['Bachelor of Arts', 15], ['Associate of Science or Engineering', 15], ['Associate of Arts', 10]])
-  koreanLanguagePoints = new Map<string, number>([['Over Level 5', 20], ['Level 4', 15], ['Level 3', 10], ['Level 2', 5], ['Level 1', 3]])
+  koreanLanguagePoints = new Map<string, number>([['Over Level 5', 20], ['Level 4', 15], ['Level 3', 10], ['Level 2', 5], ['Level 1', 3], ['None', 0]])
+  professionalExperiencePoints = new Map<string, number>([['More than 1 year', 1], ['More than 2 years', 3], ['More than 3 years', 5]]);
   incomePoints = new Map<number, number>([[0, 0], [23, 10], [30,30], [40, 40], [50, 45], [60, 50], [70, 53], [80, 56], [90, 58], [100, 60]])
   setPoints(categoryName: string, points: number){
     this.pointDictionary.set(categoryName, points);
@@ -62,5 +63,13 @@ export class AppComponent {
     if($event.value >= 80 && $event.value < 90) this.setIncomeLevel(80);
     if($event.value >= 90 && $event.value < 100) this.setIncomeLevel(90);
     if($event.value >= 100) this.setIncomeLevel(100);
+  }
+
+  getProfessionalExperiences() {
+    return Array.from(this.professionalExperiencePoints.keys());
+  }
+
+  setProfessionalExperience(professionalExperience: string){
+    this.pointDictionary.set('professionalExperience', this.professionalExperiencePoints.get(professionalExperience)!)
   }
 }
