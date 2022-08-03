@@ -1,5 +1,14 @@
 <head> </head>
 <body>
+  <p>
+    <mat-toolbar>
+      <span>Korea F-2-7 Visa Calculator</span>
+
+      <span class="example-spacer"></span>
+
+      <span>Total Points: {{ getPoints() }}</span>
+    </mat-toolbar>
+  </p>
   <h2>How old are you?</h2>
   <div class="button-roww">
     <mat-button-toggle-group>
@@ -80,5 +89,4 @@
       {{ professionalExperience }}
     </mat-list-option>
   </mat-selection-list>
-  <p>Total Points: {{ getPoints() }}</p>
 </body>

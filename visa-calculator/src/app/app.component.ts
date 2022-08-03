@@ -81,7 +81,7 @@ export class AppComponent {
   formatLabel(value: number) {
     return value + 'M';
   }
-  incomeMillions = 0;
+
   setIncomeLevel(incomeMillions: number) {
     this.pointDictionary.set('income', this.incomePoints.get(incomeMillions)!);
   }
