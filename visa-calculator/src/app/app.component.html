@@ -24,25 +24,25 @@
   </mat-card>
   <mat-card>
   <mat-card-title>How old are you?</mat-card-title>
-    <mat-radio-group>
-      <mat-radio-button value="age18" (click)="setPoints('age', 23)"
-        >18-24</mat-radio-button
+    <mat-selection-list [multiple]="false">
+      <mat-list-option value="age18" (click)="setPoints('age', 23)"
+        >18-24</mat-list-option
       >
-      <mat-radio-button value="age25" (click)="setPoints('age', 25)"
-        >25-29</mat-radio-button
+      <mat-list-option value="age25" (click)="setPoints('age', 25)"
+        >25-29</mat-list-option
       >
-      <mat-radio-button  value="age30" (click)="setPoints('age', 23)"
-        >30-34</mat-radio-button
+      <mat-list-option  value="age30" (click)="setPoints('age', 23)"
+        >30-34</mat-list-option
       >
-      <mat-radio-button value="age35" (click)="setPoints('age', 20)"
-        >35-39</mat-radio-button
+      <mat-list-option value="age35" (click)="setPoints('age', 20)"
+        >35-39</mat-list-option
       >
-      <mat-radio-button value="age40" (click)="setPoints('age', 12)"
-        >40-44</mat-radio-button
+      <mat-list-option value="age40" (click)="setPoints('age', 12)"
+        >40-44</mat-list-option
       >
-      <mat-radio-button value="age45"  (click)="setPoints('age', 8)">45-50</mat-radio-button>
-      <mat-radio-button value="age51" (click)="setPoints('age', 5)">51+</mat-radio-button>
-    </mat-radio-group>
+      <mat-list-option value="age45"  (click)="setPoints('age', 8)">45-50</mat-list-option>
+      <mat-list-option value="age51" (click)="setPoints('age', 5)">51+</mat-list-option>
+    </mat-selection-list>
 </mat-card>
   
 <mat-card>
@@ -174,13 +174,13 @@
 
   <mat-card-title>Criminal Punishment Fines</mat-card-title>
   <mat-card-subtitle>Applies only to violations within 3 years of application date.</mat-card-subtitle>
-  <mat-radio-group>
-    <mat-radio-button value="penalty1" (click)="setPoints('penalties', -40)">More than 3 Mil won</mat-radio-button>
-    <mat-radio-button value="penalty2" (click)="setPoints('penalties', -30)">More than 2 mil won</mat-radio-button>
-    <mat-radio-button value="penalty3" (click)="setPoints('penalties', -20)">Fines less than 2 Mil Won</mat-radio-button>
-    <mat-radio-button value="penalty4" (click)="setPoints('penalties', 0)">None</mat-radio-button>
+  <mat-selection-list [multiple]="false">
+    <mat-list-option value="penalty1" (click)="setPoints('penalties', -40)">More than 3 Mil won</mat-list-option>
+    <mat-list-option  value="penalty2" (click)="setPoints('penalties', -30)">More than 2 mil won</mat-list-option>
+    <mat-list-option  value="penalty3" (click)="setPoints('penalties', -20)">Fines less than 2 Mil Won</mat-list-option>
+    <mat-list-option  value="penalty4" (click)="setPoints('penalties', 0)">None</mat-list-option>
 
-</mat-radio-group>
+</mat-selection-list>
 </mat-card>
 
 

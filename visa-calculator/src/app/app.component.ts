@@ -24,6 +24,7 @@ export class AppComponent {
     ['Bachelor of Arts', 15],
     ['Associate of Science or Engineering', 15],
     ['Associate of Arts', 10],
+    ['None', 0],
   ]);
   koreanLanguagePoints = new Map<string, number>([
     ['Over Level 5', 20],
@@ -37,11 +38,13 @@ export class AppComponent {
     ['More than 1 year', 1],
     ['More than 2 years', 3],
     ['More than 3 years', 5],
+    ['None', 0],
   ]);
   volunteerActivityPoints = new Map<string, number>([
     ['More than 1 year', 1],
     ['More than 2 years', 3],
     ['More than 3 years', 5],
+    ['None', 0],
   ]);
   incomePoints = new Map<number, number>([
     [0, 0],
@@ -62,6 +65,7 @@ export class AppComponent {
     ['Masters Degree', 4],
     ['Bachelors Degree', 3],
     ['Korean Language Training', 1],
+    ['None', 0],
   ]);
   setPoints(categoryName: string, points: number) {
     this.pointDictionary.set(categoryName, points);
