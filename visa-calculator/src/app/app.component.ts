@@ -55,6 +55,14 @@ export class AppComponent {
     [90, 58],
     [100, 60],
   ]);
+
+  studyAbroadPoints = new Map<string, number>([
+    ['Global Korea Scholarship', 10],
+    ['Doctorate Degree', 5],
+    ['Masters Degree', 4],
+    ['Bachelors Degree', 3],
+    ['Korean Language Training', 1],
+  ]);
   setPoints(categoryName: string, points: number) {
     this.pointDictionary.set(categoryName, points);
   }
@@ -127,5 +135,15 @@ export class AppComponent {
   getPointsClass() {
     if (this.getPoints() < 80) return "totalPointsFail"
     return "totalPointsSuccess"
+  }
+
+  getStudyAbroad() {
+    return Array.from(this.studyAbroadPoints.keys());
+  }
+  setStudyAbroad(studyAbroad: string) {
+    this.pointDictionary.set(
+      'studyAbroad',
+      this.studyAbroadPoints.get(studyAbroad)!
+    );
   }
 }
