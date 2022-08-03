@@ -31,9 +31,10 @@
       <mat-button-toggle (click)="setPoints('age', 5)">51+</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
-  <mat-divider></mat-divider>
-  <h2>Education Level</h2>
-  <p>If you have more than 2 degrees, select 'Engineering' and not 'Arts'.</p>
+  
+  <mat-card>
+  <mat-card-title>Education Level</mat-card-title>
+  <mat-card-subtitle>If you have more than 2 degrees, select 'Engineering' and not 'Arts'.</mat-card-subtitle>
   <mat-selection-list #shoes [multiple]="false">
     <mat-list-option
       *ngFor="let educationLevel of getEducationLevels()"
@@ -43,7 +44,8 @@
       {{ educationLevel }}
     </mat-list-option>
   </mat-selection-list>
-  <mat-divider></mat-divider>
+  </mat-card>
+  
   <h2>Korean Language Ability</h2>
   <p>Grade on standard S-TOPIK report card</p>
   <mat-selection-list #koreanLanguageAbility [multiple]="false">
