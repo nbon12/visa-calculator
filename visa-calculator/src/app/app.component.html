@@ -2,35 +2,37 @@
 <body>
   <p>
     <mat-toolbar>
-      <span>Korea F-2-7 Visa Calculator</span>
+      <span>Korea F-2-7 Visa Calc</span>
 
       <span class="example-spacer"></span>
-
-      <span>Total Points: {{ getPoints() }}</span>
+      
+      <span>Points: <span class="{{getPointsClass()}}">{{ getPoints() }} / 80</span></span>
     </mat-toolbar>
   </p>
-  <h2>How old are you?</h2>
-  <div class="button-roww">
-    <mat-button-toggle-group>
-      <mat-button-toggle (click)="setPoints('age', 23)"
-        >18-24</mat-button-toggle
+  <br><br><br>
+  
+  <mat-card>
+  <mat-card-title>How old are you?</mat-card-title>
+    <mat-radio-group>
+      <mat-radio-button value="age18" (click)="setPoints('age', 23)"
+        >18-24</mat-radio-button
       >
-      <mat-button-toggle (click)="setPoints('age', 25)"
-        >25-29</mat-button-toggle
+      <mat-radio-button value="age25" (click)="setPoints('age', 25)"
+        >25-29</mat-radio-button
       >
-      <mat-button-toggle (click)="setPoints('age', 23)"
-        >30-34</mat-button-toggle
+      <mat-radio-button  value="age30" (click)="setPoints('age', 23)"
+        >30-34</mat-radio-button
       >
-      <mat-button-toggle (click)="setPoints('age', 20)"
-        >35-39</mat-button-toggle
+      <mat-radio-button value="age35" (click)="setPoints('age', 20)"
+        >35-39</mat-radio-button
       >
-      <mat-button-toggle (click)="setPoints('age', 12)"
-        >40-44</mat-button-toggle
+      <mat-radio-button value="age40" (click)="setPoints('age', 12)"
+        >40-44</mat-radio-button
       >
-      <mat-button-toggle (click)="setPoints('age', 8)">45-50</mat-button-toggle>
-      <mat-button-toggle (click)="setPoints('age', 5)">51+</mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
+      <mat-radio-button value="age45"  (click)="setPoints('age', 8)">45-50</mat-radio-button>
+      <mat-radio-button value="age51" (click)="setPoints('age', 5)">51+</mat-radio-button>
+    </mat-radio-group>
+</mat-card>
   
   <mat-card>
   <mat-card-title>Education Level</mat-card-title>

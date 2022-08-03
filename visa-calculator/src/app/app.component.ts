@@ -108,4 +108,9 @@ export class AppComponent {
       this.professionalExperiencePoints.get(professionalExperience)!
     );
   }
+
+  getPointsClass() {
+    if (this.getPoints() < 80) return "totalPointsFail"
+    return "totalPointsSuccess"
+  }
 }
