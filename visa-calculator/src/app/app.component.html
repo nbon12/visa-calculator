@@ -89,4 +89,9 @@
       {{ professionalExperience }}
     </mat-list-option>
   </mat-selection-list>
+  <h2>Have you had a D-2-7 visa in the past AND are from a counry that participated in the Korean War?</h2>
+  <mat-button-toggle-group>
+    <mat-button-toggle (click)="setPoints('KoreanWarParticipant', 10)">Yes</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('KoreanWarParticipant', 0)">No</mat-button-toggle>
+  </mat-button-toggle-group>
 </body>
