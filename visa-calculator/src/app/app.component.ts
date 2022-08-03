@@ -38,6 +38,11 @@ export class AppComponent {
     ['More than 2 years', 3],
     ['More than 3 years', 5],
   ]);
+  volunteerActivityPoints = new Map<string, number>([
+    ['More than 1 year', 1],
+    ['More than 2 years', 3],
+    ['More than 3 years', 5],
+  ]);
   incomePoints = new Map<number, number>([
     [0, 0],
     [23, 10],
@@ -106,6 +111,16 @@ export class AppComponent {
     this.pointDictionary.set(
       'professionalExperience',
       this.professionalExperiencePoints.get(professionalExperience)!
+    );
+  }
+
+  getVolunteerActivities() {
+    return Array.from(this.volunteerActivityPoints.keys());
+  }
+  setVolunteerActivities(volunteerActivity: string) {
+    this.pointDictionary.set(
+      'volunteerActivities',
+      this.volunteerActivityPoints.get(volunteerActivity)!
     );
   }
 

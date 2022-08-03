@@ -45,7 +45,7 @@
     </mat-radio-group>
 </mat-card>
   
-  <mat-card>
+<mat-card>
   <mat-card-title>Education Level</mat-card-title>
   <mat-card-subtitle>If you have more than 2 degrees, select 'Engineering' and not 'Arts'.</mat-card-subtitle>
   <mat-selection-list #shoes [multiple]="false">
@@ -116,6 +116,26 @@
     <mat-button-toggle (click)="setPoints('KoreanWarParticipant', 0)">No</mat-button-toggle>
   </mat-button-toggle-group>
 </mat-card>
+
+<mat-card>
+  <mat-card-title>Domestic Volunteer Activities</mat-card-title>
+  <mat-card-subtitle>
+    Certificate of social service activity issued by public organizations or social organizations
+    (total of activities for the past three years and recognized at least six times a year for a total of more than 50 hours)
+  </mat-card-subtitle>
+  <mat-selection-list #professionalExperienceAbroad [multiple]="false">
+    <mat-list-option
+      *ngFor="let volunteerActivity of getVolunteerActivities()"
+      (click)="setVolunteerActivities(volunteerActivity)"
+      [value]="volunteerActivity"
+    >
+      {{ volunteerActivity }}
+    </mat-list-option>
+  </mat-selection-list>
+</mat-card>
+
+
+
 
 <mat-card>
   <mat-card-title>Recommended by the government?</mat-card-title>
