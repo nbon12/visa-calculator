@@ -45,9 +45,9 @@
     </mat-list-option>
   </mat-selection-list>
   </mat-card>
-  
-  <h2>Korean Language Ability</h2>
-  <p>Grade on standard S-TOPIK report card</p>
+  <mat-card>
+  <mat-card-title>Korean Language Ability</mat-card-title>
+  <mat-card-subtitle>Grade on standard S-TOPIK report card</mat-card-subtitle>
   <mat-selection-list #koreanLanguageAbility [multiple]="false">
     <mat-list-option
       *ngFor="let koreanLevel of getKoreanLevels()"
@@ -57,8 +57,9 @@
       {{ koreanLevel }}
     </mat-list-option>
   </mat-selection-list>
-  <mat-divider></mat-divider>
-  <h2>Income (in Million Won)</h2>
+</mat-card>
+<mat-card>
+  <mat-card-title>Income (in Million Won)</mat-card-title>
   <mat-slider
     thumbLabel
     [displayWith]="formatLabel"
@@ -69,19 +70,22 @@
     aria-label="units"
     (input)="onInputChange($event)"
   ></mat-slider>
-  <h2>Did you complete the KIIP program?</h2>
+</mat-card>
+<mat-card>
+  <mat-card-title>Did you complete the KIIP program?</mat-card-title>
   <mat-button-toggle-group>
     <mat-button-toggle (click)="setPoints('KIIP', 10)">Yes</mat-button-toggle>
     <mat-button-toggle (click)="setPoints('KIIP', 0)">No</mat-button-toggle>
   </mat-button-toggle-group>
-
-  <h2>Professional Abroad Experience</h2>
-  <p>
+</mat-card>
+<mat-card>
+  <mat-card-title>Professional Abroad Experience</mat-card-title>
+  <mat-card-subtitle>
     Did you work overseas as a full-time employee? You must get a certificate of
     career issued by representatives of overseas public institutions,
     organizations and companies in the field. (only full time experience is
     accepted)
-  </p>
+  </mat-card-subtitle>
   <mat-selection-list #professionalExperienceAbroad [multiple]="false">
     <mat-list-option
       *ngFor="let professionalExperience of getProfessionalExperiences()"
@@ -91,9 +95,22 @@
       {{ professionalExperience }}
     </mat-list-option>
   </mat-selection-list>
-  <h2>Have you had a D-2-7 visa in the past AND are from a counry that participated in the Korean War?</h2>
+</mat-card>
+<mat-card>
+  <mat-card-title>Have you had a D-2-7 visa in the past AND are from a counry that participated in the Korean War?</mat-card-title>
   <mat-button-toggle-group>
     <mat-button-toggle (click)="setPoints('KoreanWarParticipant', 10)">Yes</mat-button-toggle>
     <mat-button-toggle (click)="setPoints('KoreanWarParticipant', 0)">No</mat-button-toggle>
   </mat-button-toggle-group>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Recommended by the government?</mat-card-title>
+  <mat-button-toggle-group>
+    <mat-button-toggle (click)="setPoints('recommendedByGovt', 10)">Yes</mat-button-toggle>
+    <mat-button-toggle (click)="setPoints('recommendedByGovt', 0)">No</mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-card>
+
+
 </body>
