@@ -166,5 +166,24 @@
   </mat-button-toggle-group>
 </mat-card>
 
+<mat-divider>
+</mat-divider>
+
+<h2>Minus Points</h2>
+<mat-card>
+
+  <mat-card-title>Criminal Punishment Fines</mat-card-title>
+  <mat-card-subtitle>Applies only to violations within 3 years of application date.</mat-card-subtitle>
+  <mat-radio-group>
+    <mat-radio-button value="penalty1" (click)="setPoints('penalties', -40)">More than 3 Mil won</mat-radio-button>
+    <mat-radio-button value="penalty2" (click)="setPoints('penalties', -30)">More than 2 mil won</mat-radio-button>
+    <mat-radio-button value="penalty3" (click)="setPoints('penalties', -20)">Fines less than 2 Mil Won</mat-radio-button>
+    <mat-radio-button value="penalty4" (click)="setPoints('penalties', 0)">None</mat-radio-button>
+
+</mat-radio-group>
+</mat-card>
+
+
+
 
 </body>
