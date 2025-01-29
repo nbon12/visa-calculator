@@ -5,7 +5,7 @@
       <span>Korea F-2-7 Visa Calc</span>
 
       <span class="example-spacer"></span>
-      
+
       <span>Points: <span class="{{getPointsClass()}}">{{ getPoints() }} / 80</span></span>
     </mat-toolbar>
   </p>
@@ -41,7 +41,7 @@
       <mat-list-option value="age51" (click)="setPoints('age', 5)">51+</mat-list-option>
     </mat-selection-list>
 </mat-card>
-  
+
 <mat-card>
   <mat-card-title>Education Level</mat-card-title>
   <mat-card-subtitle>If you have more than 2 degrees, select 'Engineering' and not 'Arts'.</mat-card-subtitle>
@@ -107,7 +107,7 @@
   </mat-selection-list>
 </mat-card>
 <mat-card>
-  <mat-card-title>Have you had a D-2-7 visa in the past AND are from a counry that participated in the Korean War?</mat-card-title>
+  <mat-card-title>Have you had a D-2-7 visa in the past AND are from a country that participated in the Korean War?</mat-card-title>
   <mat-button-toggle-group>
     <mat-button-toggle (click)="setPoints('KoreanWarParticipant', 10)">Yes</mat-button-toggle>
     <mat-button-toggle (click)="setPoints('KoreanWarParticipant', 0)">No</mat-button-toggle>
@@ -155,7 +155,7 @@
     under the Government Organization Act. The recommended official documents must be submitted
     to the Immigration Office, Forreign Affairs Office, and the Ministry of Justice (Residence
     Management Division). The name, date of birth, nationality, reason for recommendation
-    and period of recommendation (recommended date) is valid for up to 3 years. It must include the 
+    and period of recommendation (recommended date) is valid for up to 3 years. It must include the
     contact information of the issuer.</mat-card-subtitle>
   <mat-button-toggle-group>
     <mat-button-toggle (click)="setPoints('recommendedByGovt', 10)">Yes</mat-button-toggle>
