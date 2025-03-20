@@ -2,7 +2,7 @@
 <body>
   <p>
     <mat-toolbar>
-      <span>Korea F-2-7 Visa Calc</span>
+      <span>Korea F-2-7 Visa Calculator</span>
 
       <span class="example-spacer"></span>
 
@@ -16,9 +16,10 @@
       Depending on the number of points you have, the visa can last for a couple years before needing to renew.
       You don't need a sponsorship for this visa, so you can stay in Korea and switch jobs as much as you like.
 
-      You need at least 80 points to qualify. See if you qualify below!
+      You need at least 80 points to qualify. See if you qualify below.
     </mat-card-content>
   </mat-card>
+
   <mat-card>
   <mat-card-title>How old are you?</mat-card-title>
     <mat-selection-list [multiple]="false">
@@ -70,6 +71,7 @@
 </mat-card>
 <mat-card>
   <mat-card-title>Income (in Million Won)</mat-card-title>
+  <mat-card-subtitle>Those who can prove 40+ million are exempted from the requirement of needing to have lawfully resided in Korea (on a different visa) for the last 3 years</mat-card-subtitle>
   <mat-slider
     thumbLabel
     [displayWith]="formatLabel"
@@ -171,7 +173,7 @@
 <mat-card>
 
   <mat-card-title>Criminal Punishment Fines</mat-card-title>
-  <mat-card-subtitle>How many fines did you get, and how much were they?</mat-card-subtitle>
+  <mat-card-subtitle>Were you criminally fined, if so, how many fines did you get, and how much were they? (in any country)</mat-card-subtitle>
   <mat-selection-list [multiple]="false">
     <mat-list-option value="penalty1" (click)="setPoints('penalties', -3)">2+ offenses with fines OR 3+ million won fine(s)</mat-list-option>
     <mat-list-option  value="penalty2" (click)="setPoints('penalties', -2)">One time offense AND between 1-3 million won fine</mat-list-option>
@@ -184,7 +186,7 @@
 <mat-card>
 
   <mat-card-title>Illegal Stay</mat-card-title>
-  <mat-card-subtitle>Did you or an accompanying family member or invitee stay illegally for over 3 months?</mat-card-subtitle>
+  <mat-card-subtitle>Did any of your accompanying family members or invitees for this application stay illegally over 3 months? (in any country)</mat-card-subtitle>
   <mat-button-toggle-group>
     <mat-button-toggle (click)="setPoints('illegalStay', -1)">Yes</mat-button-toggle>
     <mat-button-toggle (click)="setPoints('illegalStay', 0)">No</mat-button-toggle>
@@ -195,12 +197,105 @@
   <mat-card>
 
     <mat-card-title>Accompanying Family Fines</mat-card-title>
-    <mat-card-subtitle>Was a family member cited with 2+ fines, OR required to pay a total of 3+ million won in fines?</mat-card-subtitle>
+    <mat-card-subtitle>Was an accompanying family member cited with 2+ fines, OR required to pay a total of 3+ million won in fines? (in any country)</mat-card-subtitle>
     <mat-button-toggle-group>
       <mat-button-toggle (click)="setPoints('familyFine', -1)">Yes</mat-button-toggle>
       <mat-button-toggle (click)="setPoints('familyFine', 0)">No</mat-button-toggle>
     </mat-button-toggle-group>
   </mat-card>
+
+
+  <mat-divider>
+  </mat-divider>
+
+
+  <mat-card>
+    <mat-card-title>Eligibility</mat-card-title>
+    <mat-card-subtitle>To qualify, you must be in one of the following situations to qualify</mat-card-subtitle>
+    <mat-selection-list [multiple]="true">
+      <mat-list-option value="3years" (click)="setPoints('3year', 0)"
+      >You lived in Korea for the last 3 years and currently have one of the following visas: E-1, E-2, E-3, E-4, E-5, E-6 (except for E-6-2 entertainer), E-7 (except for E-7-4 blue collar), D-5, D-6, D-7, D-8, D-9</mat-list-option
+      >
+      <mat-list-option value="3years" (click)="setPoints('3year', 0)"
+      >You lived in Korea for the last 3 years and currently have one of these visas: D-2 (study) visa, or D-10 (job-seeker), and completed a Master's course or higher</mat-list-option
+      >
+      <mat-list-option value="3years" (click)="setPoints('3year', 0)"
+      >You lived in Korea for the past 3 years and currently have one of these visas: D-2 (study) visa, or D-10 (job-seeker), and completed a Bachelor's degree or higher AND was recommended by a central administrative agency</mat-list-option
+      >
+      <mat-list-option  value="3years" (click)="setPoints('3year', 0)"
+      >Your annual income is 40+ million won</mat-list-option
+      >
+      <mat-list-option  value="3years" (click)="setPoints('3year', 0)">
+        You are currently employed by, or have secured future employment for, a corporation listed on the KOSPI or KOSDAQ, and are considered a Manager or <a href="https://en.namu.wiki/w/%ED%95%9C%EA%B5%AD%ED%91%9C%EC%A4%80%EC%A7%81%EC%97%85%EB%B6%84%EB%A5%98#s-3">Expert Related Worker</a>
+      </mat-list-option>
+      <mat-list-option value="3years" (click)="setPoints('3year', 0)"
+      >You were recommended by the head of a central administrative agency for science or engineering to a support project</mat-list-option
+      >
+      <mat-list-option value="3years" (click)="setPoints('3year', 0)"
+      >You are an accompanying spouse or child of someone who has met one of the previous qualifications, and have an income higher than the gross national income per capita recently announced by the Bank of Korea.</mat-list-option
+      >
+
+      <mat-list-option value="3years" (click)="setPoints('3year', -1000)"
+      >None of the above situations apply. This disqualifies you ☹️</mat-list-option
+      >
+    </mat-selection-list>
+  </mat-card>
+  <h2>Disqualifications</h2>
+  <p>These are uncommon. Answering yes would disqualify you 🫠</p>
+
+  <mat-card>
+    <mat-card-title>Prison</mat-card-title>
+    <mat-card-subtitle>Were you sentenced to imprisonment within the last 5 years, by any government?</mat-card-subtitle>
+
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="setPoints('prison', -1000)">Yes</mat-button-toggle>
+      <mat-button-toggle (click)="setPoints('prison', 0)">No</mat-button-toggle>
+    </mat-button-toggle-group>
+
+  </mat-card>
+
+
+  <mat-card>
+    <mat-card-title>Illegally stayed in Korea</mat-card-title>
+    <mat-card-subtitle>Within the last 3 years, did you violate the Immigration Control Act 3+ times, and were required to pay 5+ million won in fines?</mat-card-subtitle>
+
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="setPoints('illegalAlien', -1000)">Yes</mat-button-toggle>
+      <mat-button-toggle (click)="setPoints('illegalAlien', 0)">No</mat-button-toggle>
+    </mat-button-toggle-group>
+
+  </mat-card>
+
+
+  <mat-card>
+    <mat-card-title>Violated Laws of Korea</mat-card-title>
+    <mat-card-subtitle>Within the last 3 years, were you sentenced to a fine of 3+ million won for violating the laws of the Republic of Korea?</mat-card-subtitle>
+
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="setPoints('lawbreaker', -1000)">Yes</mat-button-toggle>
+      <mat-button-toggle (click)="setPoints('lawbreaker', 0)">No</mat-button-toggle>
+    </mat-button-toggle-group>
+
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>False Documents</mat-card-title>
+    <mat-card-subtitle>Within the last 3 years, were you cited with submitting false documents?</mat-card-subtitle>
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="setPoints('fraud', -1000)">Yes</mat-button-toggle>
+      <mat-button-toggle (click)="setPoints('fraud', 0)">No</mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Entry Ban</mat-card-title>
+    <mat-card-subtitle>Are you banned from entry into Korea?</mat-card-subtitle>
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="setPoints('banned', -1000)">Yes</mat-button-toggle>
+      <mat-button-toggle (click)="setPoints('banned', 0)">No</mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-card>
+
 
 <mat-card>
   <mat-card-title>Total Points</mat-card-title>
