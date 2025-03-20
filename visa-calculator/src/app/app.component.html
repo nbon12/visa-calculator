@@ -211,8 +211,8 @@
 
   <mat-card>
     <mat-card-title>Eligibility</mat-card-title>
-    <mat-card-subtitle>To qualify, you must be in one of the following situations to qualify</mat-card-subtitle>
-    <mat-selection-list [multiple]="true">
+    <mat-card-subtitle>To qualify, you must be able to answer "yes" to at least one of these questions.</mat-card-subtitle>
+    <mat-selection-list [multiple]="false">
       <mat-list-option value="3years" (click)="setPoints('3year', 0)"
       >You lived in Korea for the last 3 years and currently have one of the following visas: E-1, E-2, E-3, E-4, E-5, E-6 (except for E-6-2 entertainer), E-7 (except for E-7-4 blue collar), D-5, D-6, D-7, D-8, D-9</mat-list-option
       >
@@ -236,7 +236,7 @@
       >
 
       <mat-list-option value="3years" (click)="setPoints('3year', -1000)"
-      >None of the above situations apply. This disqualifies you ☹️</mat-list-option
+      >None of the above situations apply. This disqualifies you from the F-2-7 visa ☹️ </mat-list-option
       >
     </mat-selection-list>
   </mat-card>
@@ -280,7 +280,7 @@
 
   <mat-card>
     <mat-card-title>False Documents</mat-card-title>
-    <mat-card-subtitle>Within the last 3 years, were you cited with submitting false documents?</mat-card-subtitle>
+    <mat-card-subtitle>Within the last 3 years, were you cited with submitting false documents to Korean immigration?</mat-card-subtitle>
     <mat-button-toggle-group>
       <mat-button-toggle (click)="setPoints('fraud', -1000)">Yes</mat-button-toggle>
       <mat-button-toggle (click)="setPoints('fraud', 0)">No</mat-button-toggle>
