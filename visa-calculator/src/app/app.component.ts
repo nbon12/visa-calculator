@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
@@ -6,7 +6,7 @@ import { MatSliderChange } from '@angular/material/slider';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements AfterViewInit {
   title = 'visa-calculator';
   currentAgePoints = 0;
   pointDictionary = new Map<string, number>([
@@ -151,15 +151,37 @@ export class AppComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.loadAdScript();
   }
 
   private loadAdScript() {
+    // Ensure the container exists before loading the script
+    const container = document.getElementById('container-bfcd74eda6a2a060da5bb404fb613595');
+    if (!container) {
+      console.error('Ad container not found, retrying in 100ms...');
+      // Retry after a short delay if container isn't ready yet
+      setTimeout(() => this.loadAdScript(), 100);
+      return;
+    }
+
+    console.log('Ad container found, loading script...');
+    
     const script = document.createElement('script');
     script.async = true;
     script.setAttribute('data-cfasync', 'false');
     script.src = '//pl27515507.profitableratecpm.com/bfcd74eda6a2a060da5bb404fb613595/invoke.js';
+    
+    // Add error handling
+    script.onerror = () => {
+      console.error('Ad script failed to load');
+      container.innerHTML = '<p style="color: #666; text-align: center; padding: 20px;">Advertisement loading failed</p>';
+    };
+    
+    script.onload = () => {
+      console.log('Ad script loaded successfully');
+    };
+    
     document.head.appendChild(script);
   }
 }
