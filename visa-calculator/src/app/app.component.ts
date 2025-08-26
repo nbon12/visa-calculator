@@ -175,7 +175,7 @@ export class AppComponent implements AfterViewInit {
     // Add error handling
     script.onerror = () => {
       console.error('Ad script failed to load');
-      container.innerHTML = '<p style="color: #666; text-align: center; padding: 20px;">Your ad here! Contact pita_superb9x@icloud.com for inquiries!</p>';
+      container.innerHTML = '<p style="color: #666; text-align: center; padding: 20px;"><span style="font-size: 18px;">Your Ad Here!</span><br><br>Contact <a href="mailto:pita_superb9x@icloud.com" style="color: #0066cc; text-decoration: underline;">pita_superb9x@icloud.com</a> for inquiries!</p>';
     };
     
     script.onload = () => {
