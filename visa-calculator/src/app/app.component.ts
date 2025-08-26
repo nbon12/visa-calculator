@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
@@ -6,7 +6,7 @@ import { MatSliderChange } from '@angular/material/slider';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'visa-calculator';
   currentAgePoints = 0;
   pointDictionary = new Map<string, number>([
@@ -149,5 +149,17 @@ export class AppComponent {
       'studyAbroad',
       this.studyAbroadPoints.get(studyAbroad)!
     );
+  }
+
+  ngOnInit() {
+    this.loadAdScript();
+  }
+
+  private loadAdScript() {
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = '//pl27515507.profitableratecpm.com/bfcd74eda6a2a060da5bb404fb613595/invoke.js';
+    document.head.appendChild(script);
   }
 }
